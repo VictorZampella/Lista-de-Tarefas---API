@@ -1,0 +1,8 @@
+package tech.buildrun.api.repository;
+import tech.buildrun.api.model.Etiqueta;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+public interface EtiquetaRepository extends JpaRepository<Etiqueta, Long> {
+    Page<Etiqueta> findByNomeContainingIgnoreCase(String nome, Pageable pageable);
+}
